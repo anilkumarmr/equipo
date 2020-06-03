@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import store from "./store";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Routes from "./router/Routes";
+
+export default function App() {
+   return (
+      /* Provide Redux store */
+      <Provider store={store}>
+         {/* Asynchronously persist redux stores and show `SplashScreen` while it's loading. */}
+         {/* Add high level `Suspense` in case if was not handled inside the React tree. */}
+         {/* Override `basename` (e.g: `homepage` in `package.json`) */}
+         <BrowserRouter>
+            {/* Render routes with provided `Layout`. */}
+            <Routes />
+         </BrowserRouter>
+      </Provider>
+   );
 }
-
-export default App;
