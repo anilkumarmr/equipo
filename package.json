@@ -9,6 +9,7 @@
       "@wojtekmaj/react-daterange-picker": "^3.0.0",
       "axios": "^0.19.2",
       "chart.js": "^2.9.3",
+      "moment": "^2.26.0",
       "react": "^16.13.1",
       "react-avatar": "^3.9.7",
       "react-chartjs-2": "^2.9.0",

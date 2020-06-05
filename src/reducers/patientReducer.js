@@ -16,6 +16,11 @@ const patientReducer = (state = INITIAL_STATE, action) => {
       case "FILTER_DASHBOARD_SUCCESS":
          return {
             ...state,
+            patients: action.response.data.patients,
+            totalpatients: 300,
+            currentPage: 1,
+            from: 1,
+            to: 6,
          };
       case "FILTER_DASHBOARD_ERROR":
          return {

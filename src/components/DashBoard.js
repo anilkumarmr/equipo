@@ -5,7 +5,11 @@ import Filter from "./includes/Filter";
 import Graphs from "./includes/Graphs";
 import PatientFilter from "./includes/PatientFilter";
 import Patients from "./includes/Patients";
-import { getPatientRequest, getChartsRequest } from "../actions/patientActions";
+import {
+   getPatientRequest,
+   getChartsRequest,
+   filterDashboardRequest,
+} from "../actions/patientActions";
 
 export class DashBoard extends Component {
    componentDidMount() {
@@ -20,7 +24,7 @@ export class DashBoard extends Component {
             style={{ marginLeft: this.props.width }}
          >
             <Subheader />
-            <Filter />
+            <Filter onfilter={this.props.filterDashboardRequest} />
             <Graphs chartData={this.props.chartData} />
             <PatientFilter />
             <Patients
@@ -52,6 +56,8 @@ const mapDispatchToProps = (dispatch) => {
    return {
       getPatientRequest: (payload) => dispatch(getPatientRequest(payload)),
       getChartsRequest: () => dispatch(getChartsRequest()),
+      filterDashboardRequest: (payload) =>
+         dispatch(filterDashboardRequest(payload)),
    };
 };
 
