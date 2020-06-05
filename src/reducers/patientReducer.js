@@ -5,14 +5,11 @@ const INITIAL_STATE = {
    to: 6,
    currentPage: 1,
    chartData: {},
+   searchResult: [],
 };
 
 const patientReducer = (state = INITIAL_STATE, action) => {
    switch (action.type) {
-      case " FILTER_DASHBOARD_REQUEST":
-         return {
-            ...state,
-         };
       case "FILTER_DASHBOARD_SUCCESS":
          return {
             ...state,
@@ -22,22 +19,17 @@ const patientReducer = (state = INITIAL_STATE, action) => {
             from: 1,
             to: 6,
          };
-      case "FILTER_DASHBOARD_ERROR":
-         return {
-            ...state,
-         };
-      case "FILTER_PATIENT_REQUEST":
-         return {
-            ...state,
-         };
+
       case "FILTER_PATIENT_SUCCESS":
          return {
             ...state,
+            patients: action.response.data.patients,
+            totalpatients: 441,
+            currentPage: 1,
+            from: 1,
+            to: 6,
          };
-      case "FILTER_PATIENT_ERROR":
-         return {
-            ...state,
-         };
+
       case "GET_PATIENT_REQUEST":
          return {
             ...state,
@@ -45,29 +37,24 @@ const patientReducer = (state = INITIAL_STATE, action) => {
             from: (action.payload.page - 1) * 6 + 1,
             to: action.payload.page * 6,
          };
+
       case "GET_PATIENT_SUCCESS":
          return {
             ...state,
             patients: action.response.data.patients,
             totalpatients: action.response.data.totalPatients,
          };
-      case "GET_PATIENT_ERROR":
-         return {
-            ...state,
-         };
 
-      case "GET_CHARTS_REQUEST":
-         return {
-            ...state,
-         };
       case "GET_CHARTS_SUCCESS":
          return {
             ...state,
             chartData: action.response.data,
          };
-      case "GET_CHARTS_ERROR":
+
+      case "SEARCH_PATIENT_SUCCESS":
          return {
             ...state,
+            searchResult: action.response.data.patients,
          };
 
       default:

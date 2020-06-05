@@ -1,7 +1,12 @@
 import React from "react";
 import Avatar from "react-avatar";
 import { connect } from "react-redux";
+import { searchPatientRequest } from "../actions/patientActions";
+
 const Navbar = (props) => {
+   const handleSearch = (e) => {
+      props.searchPatientRequest({ q: e.target.value });
+   };
    return (
       <nav
          className="navbar shadow-lg sticky top-0 bg-white"
@@ -15,6 +20,7 @@ const Navbar = (props) => {
                      className="form-control"
                      placeholder="Firstname/lastname"
                      style={{ width: "300px" }}
+                     onChange={handleSearch}
                   />
                </div>
             </form>
@@ -71,11 +77,15 @@ const Navbar = (props) => {
 const mapStateToProps = (state) => {
    return {
       width: state.view.width,
+      searchResult: state.patients.searchResult,
    };
 };
 
 const mapDispatchToProps = (dispatch) => {
-   return {};
+   return {
+      searchPatientRequest: (payload) =>
+         dispatch(searchPatientRequest(payload)),
+   };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

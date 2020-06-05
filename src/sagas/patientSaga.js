@@ -7,9 +7,18 @@ import {
    getChartError,
    filterDashboardSuccess,
    filterDashboardError,
+   filterPatientSuccess,
+   filterPatientError,
+   searchPatientSuccess,
+   searchPatientError,
 } from "../actions/patientActions";
 
-import { getPatients, getCharts, filterDashBoard } from "../api/patients";
+import {
+   getPatients,
+   getCharts,
+   filterDashBoard,
+   searchPatient,
+} from "../api/patients";
 
 function* handleGetPatients(payload) {
    try {
@@ -38,8 +47,28 @@ function* filterDashboard(payload) {
    }
 }
 
+function* handleFilterPatient(payload) {
+   try {
+      const response = yield call(filterDashBoard, payload.payload);
+      yield put(filterPatientSuccess(response));
+   } catch (error) {
+      yield put(filterPatientError(error));
+   }
+}
+
+function* handleSearchPatient(payload) {
+   try {
+      const response = yield call(searchPatient, payload.payload);
+      yield put(searchPatientSuccess(response));
+   } catch (error) {
+      yield put(searchPatientError(error));
+   }
+}
+
 export default function* watchPatientsLoad() {
    yield takeEvery("GET_PATIENT_REQUEST", handleGetPatients);
    yield takeEvery("GET_CHARTS_REQUEST", handleGetCharts);
    yield takeEvery("FILTER_DASHBOARD_REQUEST", filterDashboard);
+   yield takeEvery("FILTER_PATIENT_REQUEST", handleFilterPatient);
+   yield takeEvery("SEARCH_PATIENT_REQUEST", handleSearchPatient);
 }

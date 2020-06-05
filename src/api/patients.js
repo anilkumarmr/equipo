@@ -13,4 +13,18 @@ const filterDashBoard = async (payload) => {
    );
 };
 
-export { getPatients, getCharts, filterDashBoard };
+const filterPatient = async (payload) => {
+   return await axios.get(`data/patients.json?status=${payload.status}`);
+};
+
+const searchPatient = async (payload) => {
+   return await axios.get(`data/patients.json?q=${payload.q}`);
+};
+
+export {
+   getPatients,
+   getCharts,
+   filterDashBoard,
+   filterPatient,
+   searchPatient,
+};

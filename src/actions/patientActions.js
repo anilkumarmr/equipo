@@ -58,6 +58,21 @@ const getChartError = (error) => ({
    error,
 });
 
+const searchPatientRequest = (payload) => ({
+   type: "SEARCH_PATIENT_REQUEST",
+   payload,
+});
+
+const searchPatientSuccess = (response) => ({
+   type: "SEARCH_PATIENT_SUCCESS",
+   response,
+});
+
+const searchPatientError = (error) => ({
+   type: "SEARCH_PATIENT_ERROR",
+   error,
+});
+
 export {
    filterDashboardRequest,
    filterDashboardSuccess,
@@ -71,4 +86,7 @@ export {
    getChartsRequest,
    getChartsSuccess,
    getChartError,
+   searchPatientRequest,
+   searchPatientSuccess,
+   searchPatientError,
 };

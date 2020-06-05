@@ -9,6 +9,8 @@ import {
    getPatientRequest,
    getChartsRequest,
    filterDashboardRequest,
+   searchPatientRequest,
+   filterPatientRequest,
 } from "../actions/patientActions";
 
 export class DashBoard extends Component {
@@ -26,7 +28,7 @@ export class DashBoard extends Component {
             <Subheader />
             <Filter onfilter={this.props.filterDashboardRequest} />
             <Graphs chartData={this.props.chartData} />
-            <PatientFilter />
+            <PatientFilter onFilter={this.props.filterPatientRequest} />
             <Patients
                patients={this.props.patients}
                totalpatients={this.props.totalpatients}
@@ -34,6 +36,7 @@ export class DashBoard extends Component {
                to={this.props.to}
                pageinate={this.props.getPatientRequest}
                currentPage={this.props.currentPage}
+               searchPatient={this.props.searchPatientRequest}
             />
          </div>
       );
@@ -58,6 +61,10 @@ const mapDispatchToProps = (dispatch) => {
       getChartsRequest: () => dispatch(getChartsRequest()),
       filterDashboardRequest: (payload) =>
          dispatch(filterDashboardRequest(payload)),
+      filterPatientRequest: (payload) =>
+         dispatch(filterPatientRequest(payload)),
+      searchPatientRequest: (payload) =>
+         dispatch(searchPatientRequest(payload)),
    };
 };
 

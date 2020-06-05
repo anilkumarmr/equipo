@@ -2,10 +2,14 @@ import React from "react";
 import Pagination from "react-js-pagination";
 
 export default function Patients(props) {
-   console.log(props);
    const handlePageChange = (page) => {
       props.pageinate({ page });
    };
+
+   const handleSearch = (e) => {
+      props.searchPatient({ q: e.target.value });
+   };
+
    return (
       <div className="row">
          <div className="col-lg-12 pt-8">
@@ -20,6 +24,7 @@ export default function Patients(props) {
                      type="text"
                      className="form-control"
                      placeholder="Search name"
+                     onChange={handleSearch}
                   ></input>
                </div>
             </div>
