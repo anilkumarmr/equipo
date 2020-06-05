@@ -5,8 +5,6 @@ export default function Graphs(props) {
    const wellenessVisit = props.chartData.wellenessVisit;
    const highBp = props.chartData.highBP;
    const hba1c = props.chartData.HbA1c;
-   const tobacco = props.chartData.TobaccoUse;
-   const chronicCare = props.chartData.chronicCare;
    const tcm = props.chartData.tcm;
    const bmi = props.chartData.BMI;
 
@@ -29,18 +27,6 @@ export default function Graphs(props) {
                <Doughnut data={hba1c} height={100} width={100} />
                <div className="col-lg-12 text-center md:text-lg text-2xl mt-6">
                   HbA1c Control
-               </div>
-            </div>
-            <div className="col-lg-2 col-md-3 m-2  border border-black shadow-lg">
-               <Doughnut data={tobacco} height={100} width={100} />
-               <div className="col-lg-12 text-center md:text-lg text-3xl mt-6">
-                  Tobacco use
-               </div>
-            </div>
-            <div className="col-lg-2 col-md-3 m-2  border border-black shadow-lg">
-               <Doughnut data={chronicCare} height={100} width={100} />
-               <div className="col-lg-12 text-center md:text-lg text-2xl mt-6">
-                  Chronic care
                </div>
             </div>
             <div className="col-lg-2 col-md-3 m-2  border border-black shadow-lg">
