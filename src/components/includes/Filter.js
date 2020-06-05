@@ -17,6 +17,11 @@ const Filter = (props) => {
       });
    };
 
+   const reset = () => {
+      onChange([new Date(), new Date()]);
+      setPlan("All");
+   };
+
    return (
       <div className="row mt-8">
          <div className="col-lg-12">
@@ -49,6 +54,7 @@ const Filter = (props) => {
             <button
                className="hover:bg-blue-600 text-white py-2 px-4 rounded ml-4"
                style={{ background: "#4a91cf" }}
+               onClick={reset}
             >
                Reset
             </button>
