@@ -1,4 +1,5 @@
 {
+   "totalPatients": 569,
    "patients": [
       {
          "name": "AnilKumar",
@@ -38,16 +39,6 @@
          "opportunity": 1,
          "phone": 989583422,
          "lastVisited": "20-Mar-2020",
-         "carePlan": "plan_b"
-      },
-      {
-         "name": "Abhi",
-         "age": 25,
-         "chronic_conditions": "Short Sight",
-         "payor": "star health",
-         "opportunity": 1,
-         "phone": 94949683429,
-         "lastVisited": "25-Mar-2020",
          "carePlan": "plan_b"
       },
       {

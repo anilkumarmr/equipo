@@ -3,4 +3,8 @@ const getPatients = async () => {
    return await axios.get("data/patients.json");
 };
 
-export { getPatients };
+const getCharts = async () => {
+   return await axios.get("data/chartData.json");
+};
+
+export { getPatients, getCharts };

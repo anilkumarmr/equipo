@@ -5,17 +5,12 @@ import Filter from "./includes/Filter";
 import Graphs from "./includes/Graphs";
 import PatientFilter from "./includes/PatientFilter";
 import Patients from "./includes/Patients";
-import { getPatientRequest } from "../actions/patientActions";
+import { getPatientRequest, getChartsRequest } from "../actions/patientActions";
 
 export class DashBoard extends Component {
-   constructor(props) {
-      super(props);
-
-      this.state = {};
-   }
-
    componentDidMount() {
-      this.props.getPatientRequest();
+      this.props.getPatientRequest({ page: this.props.currentPage });
+      this.props.getChartsRequest();
    }
 
    render() {
@@ -26,9 +21,16 @@ export class DashBoard extends Component {
          >
             <Subheader />
             <Filter />
-            <Graphs />
+            <Graphs chartData={this.props.chartData} />
             <PatientFilter />
-            <Patients patients={this.props.patients} />
+            <Patients
+               patients={this.props.patients}
+               totalpatients={this.props.totalpatients}
+               from={this.props.from}
+               to={this.props.to}
+               pageinate={this.props.getPatientRequest}
+               currentPage={this.props.currentPage}
+            />
          </div>
       );
    }
@@ -38,12 +40,18 @@ const mapStateToProps = (state) => {
    return {
       width: state.view.width,
       patients: state.patients.patients,
+      totalpatients: state.patients.totalpatients,
+      from: state.patients.from,
+      to: state.patients.to,
+      chartData: state.patients.chartData,
+      currentPage: state.patients.currentPage,
    };
 };
 
 const mapDispatchToProps = (dispatch) => {
    return {
-      getPatientRequest: () => dispatch(getPatientRequest()),
+      getPatientRequest: (payload) => dispatch(getPatientRequest(payload)),
+      getChartsRequest: () => dispatch(getChartsRequest()),
    };
 };
 

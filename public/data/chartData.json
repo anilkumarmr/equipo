@@ -1,0 +1,65 @@
+{
+   "wellenessVisit": {
+      "datasets": [
+         {
+            "label": "Wellness Visit",
+            "backgroundColor": ["#4a91cf", "#c2b8b9"],
+            "data": [64, 24]
+         }
+      ]
+   },
+   "highBP": {
+      "datasets": [
+         {
+            "label": "Wellness Visit",
+            "backgroundColor": ["#4a91cf", "#c2b8b9"],
+            "data": [70, 15]
+         }
+      ]
+   },
+   "HbA1c": {
+      "datasets": [
+         {
+            "label": "Wellness Visit",
+            "backgroundColor": ["#4a91cf", "#c2b8b9"],
+            "data": [52, 49]
+         }
+      ]
+   },
+   "TobaccoUse": {
+      "datasets": [
+         {
+            "label": "Wellness Visit",
+            "backgroundColor": ["#4a91cf", "#c2b8b9"],
+            "data": [10, 70]
+         }
+      ]
+   },
+   "chronicCare": {
+      "datasets": [
+         {
+            "label": "Wellness Visit",
+            "backgroundColor": ["#4a91cf", "#c2b8b9"],
+            "data": [50, 50]
+         }
+      ]
+   },
+   "tcm": {
+      "datasets": [
+         {
+            "label": "Wellness Visit",
+            "backgroundColor": ["#4a91cf", "#c2b8b9"],
+            "data": [114, 21]
+         }
+      ]
+   },
+   "BMI": {
+      "datasets": [
+         {
+            "label": "Wellness Visit",
+            "backgroundColor": ["#4a91cf", "#c2b8b9"],
+            "data": [1, 7]
+         }
+      ]
+   }
+}

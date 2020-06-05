@@ -1,14 +1,18 @@
 import React from "react";
+import Pagination from "react-js-pagination";
 
 export default function Patients(props) {
    console.log(props);
+   const handlePageChange = (page) => {
+      props.pageinate({ page });
+   };
    return (
       <div className="row">
          <div className="col-lg-12 pt-8">
             <div className="row">
                <div className="col-lg-6 mt-6 pull-left">
                   <span>
-                     Showing {props.from} to {props.to} of {props.total}
+                     Showing {props.from} to {props.to} of {props.totalpatients}
                   </span>
                </div>
                <div className="col-lg-2 pull-right">
@@ -21,7 +25,7 @@ export default function Patients(props) {
             </div>
          </div>
          <div className="col-lg-12 mt-8">
-            <table className="table table-bordered">
+            <table className="table table-bordered mb-0">
                <thead>
                   <tr>
                      <th>Name</th>
@@ -44,11 +48,28 @@ export default function Patients(props) {
                         <td>{obj.opportunity}</td>
                         <td>{obj.phone}</td>
                         <td>{obj.lastVisited}</td>
-                        <td>{obj.carePlan}</td>
+                        <td>
+                           <span
+                              className="text-white py-2 px-3 rounded-md"
+                              style={{ background: "#4a91cf" }}
+                           >
+                              CarePlan
+                           </span>
+                        </td>
                      </tr>
                   ))}
                </tbody>
             </table>
+         </div>
+         <div className="col-lg-12">
+            <div className="pull-right">
+               <Pagination
+                  activePage={props.currentPage}
+                  itemsCountPerPage={10}
+                  totalItemsCount={props.totalpatients}
+                  onChange={handlePageChange}
+               />
+            </div>
          </div>
       </div>
    );
