@@ -1,5 +1,14 @@
 import React from "react";
+import Sidebar from "./Sidebar";
+import Navbar from "./Navbar";
+import Routes from "../router/Routes";
 
 export default function Home() {
-   return <div>Hello World</div>;
+   return (
+      <>
+         <Navbar />
+         <Sidebar />
+         <Routes />
+      </>
+   );
 }

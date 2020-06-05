@@ -1,0 +1,65 @@
+{
+   "totalPatients": 569,
+   "patients": [
+      {
+         "name": "AnilKumar",
+         "age": 30,
+         "chronic_conditions": "no condition",
+         "payor": "star health",
+         "opportunity": 0,
+         "phone": 123456789,
+         "lastVisited": "04-Jun-2020",
+         "carePlan": "plan_a"
+      },
+      {
+         "name": "Raman",
+         "age": 29,
+         "chronic_conditions": "obesity",
+         "payor": "star health",
+         "opportunity": 1,
+         "phone": 987654321,
+         "lastVisited": "01-Feb-2020",
+         "carePlan": "plan_b"
+      },
+      {
+         "name": "Vaisakh",
+         "age": 32,
+         "chronic_conditions": "BP",
+         "payor": "star health",
+         "opportunity": 1,
+         "phone": 98733654321,
+         "lastVisited": "01-Mar-2020",
+         "carePlan": "plan_b"
+      },
+      {
+         "name": "Vishnu",
+         "age": 32,
+         "chronic_conditions": "Vertigo",
+         "payor": "star health",
+         "opportunity": 1,
+         "phone": 989583422,
+         "lastVisited": "20-Mar-2020",
+         "carePlan": "plan_b"
+      },
+      {
+         "name": "Abhi",
+         "age": 25,
+         "chronic_conditions": "Short Sight",
+         "payor": "star health",
+         "opportunity": 1,
+         "phone": 94949683429,
+         "lastVisited": "25-Mar-2020",
+         "carePlan": "plan_b"
+      },
+      {
+         "name": "Anand",
+         "age": 34,
+         "chronic_conditions": "Obesity",
+         "payor": "star health",
+         "opportunity": 1,
+         "phone": 94949683429,
+         "lastVisited": "25-Mar-2020",
+         "carePlan": "plan_b"
+      }
+   ]
+}

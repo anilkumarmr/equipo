@@ -6,14 +6,14 @@ import {
    Switch,
    withRouter,
 } from "react-router-dom";
-import Home from "../components/Home";
+import DashBoard from "../components/DashBoard";
 
 export default function Routes() {
    return (
       <Router>
          <div>
             <Switch>
-               <Route path="/" exact component={Home} />
+               <Route path="/" exact component={DashBoard} />
             </Switch>
          </div>
       </Router>
