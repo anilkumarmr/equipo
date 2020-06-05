@@ -6,6 +6,7 @@ const INITIAL_STATE = {
    currentPage: 1,
    chartData: {},
    searchResult: [],
+   isVisible: false,
 };
 
 const patientReducer = (state = INITIAL_STATE, action) => {
@@ -55,6 +56,24 @@ const patientReducer = (state = INITIAL_STATE, action) => {
          return {
             ...state,
             searchResult: action.response.data.patients,
+         };
+
+      case "SHOW_ADD_PATIENT":
+         return {
+            ...state,
+            isVisible: action.payload.isVisible,
+         };
+      case "ADD_PATIENT_REQUEST":
+         return {
+            ...state,
+         };
+      case "ADD_PATIENT_SUCCESS":
+         return {
+            ...state,
+         };
+      case "ADD_PATIENT_ERROR":
+         return {
+            ...state,
          };
 
       default:

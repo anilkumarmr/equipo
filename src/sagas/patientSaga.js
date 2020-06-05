@@ -11,6 +11,8 @@ import {
    filterPatientError,
    searchPatientSuccess,
    searchPatientError,
+   addPatientSuccess,
+   addPatientError,
 } from "../actions/patientActions";
 
 import {
@@ -18,6 +20,7 @@ import {
    getCharts,
    filterDashBoard,
    searchPatient,
+   addPatient,
 } from "../api/patients";
 
 function* handleGetPatients(payload) {
@@ -65,10 +68,20 @@ function* handleSearchPatient(payload) {
    }
 }
 
+function* handleAddPatient(payload) {
+   try {
+      const response = yield call(addPatient, payload.payload);
+      yield put(addPatientSuccess(response));
+   } catch (error) {
+      yield put(addPatientError(error));
+   }
+}
+
 export default function* watchPatientsLoad() {
    yield takeEvery("GET_PATIENT_REQUEST", handleGetPatients);
    yield takeEvery("GET_CHARTS_REQUEST", handleGetCharts);
    yield takeEvery("FILTER_DASHBOARD_REQUEST", filterDashboard);
    yield takeEvery("FILTER_PATIENT_REQUEST", handleFilterPatient);
    yield takeEvery("SEARCH_PATIENT_REQUEST", handleSearchPatient);
+   yield takeEvery("ADD_PATIENT_REQUEST", handleAddPatient);
 }

@@ -21,10 +21,15 @@ const searchPatient = async (payload) => {
    return await axios.get(`data/patients.json?q=${payload.q}`);
 };
 
+const addPatient = async (payload) => {
+   return await axios.post(`data/patients`, payload);
+};
+
 export {
    getPatients,
    getCharts,
    filterDashBoard,
    filterPatient,
    searchPatient,
+   addPatient,
 };

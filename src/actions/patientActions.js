@@ -73,6 +73,26 @@ const searchPatientError = (error) => ({
    error,
 });
 
+const showAddPatient = (payload) => ({
+   type: "SHOW_ADD_PATIENT",
+   payload,
+});
+
+const addPatientRequest = (payload) => ({
+   type: "ADD_PATIENT_REQUEST",
+   payload,
+});
+
+const addPatientSuccess = (payload) => ({
+   type: "ADD_PATIENT_SUCCESS",
+   payload,
+});
+
+const addPatientError = (payload) => ({
+   type: "ADD_PATIENT_ERROR",
+   payload,
+});
+
 export {
    filterDashboardRequest,
    filterDashboardSuccess,
@@ -89,4 +109,8 @@ export {
    searchPatientRequest,
    searchPatientSuccess,
    searchPatientError,
+   showAddPatient,
+   addPatientRequest,
+   addPatientSuccess,
+   addPatientError,
 };
