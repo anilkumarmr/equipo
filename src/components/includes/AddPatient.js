@@ -44,6 +44,7 @@ export default function AddPatient(props) {
                                  payor: "",
                                  opportunity: "",
                                  phone: "",
+                                 lastVisited: "04-Jun-2020",
                               }}
                               validationSchema={validate}
                               onSubmit={(values) => {

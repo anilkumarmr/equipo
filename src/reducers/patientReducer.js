@@ -66,6 +66,8 @@ const patientReducer = (state = INITIAL_STATE, action) => {
       case "ADD_PATIENT_REQUEST":
          return {
             ...state,
+            isVisible: false,
+            patients: [...state.patients, action.payload.patient],
          };
       case "ADD_PATIENT_SUCCESS":
          return {
